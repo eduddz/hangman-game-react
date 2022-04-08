@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+
 import "./App.scss";
 
 import { Correct } from "./components/Correct";
 import { Header } from "./components/Header";
 import { Keyboard } from "./components/Keyboard";
 
-function App() {
+export function App() {
 
   const words = [
     'uva', 
@@ -40,12 +40,6 @@ function App() {
     }
   })
 
-  function updateGame() {
-    showLettersWrong();
-    showLettersAllRight();
-    showWinner();
-  }
-
   function showLettersWrong() {
     const letterwrong = document.querySelector("#letterwrong");
     letterwrong.innerHTML = "";
@@ -68,19 +62,22 @@ function App() {
 
   function showWinner() {
     const letterallright = document.querySelector("#letterallright")
-    if (secretWord.length >= 1) {
       if(secretWord === letterallright.textContent) {
         setTimeout(() => {
           alert("🏆 Parabéns! 🔥 Você ganhooooou!")
-        }, 500)
-      }
+      }, 500)
     }
   }
 
   function showLetterRepeat() {
     alert("Já usou a letra")
   }
-  
+
+  function updateGame() {
+    showLettersWrong();
+    showLettersAllRight();
+    showWinner();
+  }
 
   return (
     <>
@@ -97,5 +94,3 @@ function App() {
     </>
   )
 }
-
-export default App
