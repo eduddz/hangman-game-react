@@ -83,10 +83,7 @@ export function App() {
     <>
     <Header />
     <Correct>
-      <div 
-        className="correct"
-        id="letterallright"
-      ></div>
+      <div id="letterallright"></div>
     </Correct>
     <Keyboard />
     <h2>Letras Erradas</h2>
