@@ -7,14 +7,23 @@ import { Keyboard } from "./components/Keyboard";
 
 function App() {
 
-  const words = ['uva', 'abacate', 'limao', 'ventilador', 'ovo'];
-
-  const lifes = ["🧡🧡🧡🧡🧡🧡🧡🧡🧡"]
+  const words = [
+    'uva', 
+    'abacate', 
+    'limao', 
+    'ventilador', 
+    'ovo',
+    'javascript',
+    'typescript',
+    'html',
+    'youtube'
+  ];
   
   const secretWord = words[Math.floor(Math.random() * words.length)];
 
   const letterWrong = [];
   const letterAllRight = [];
+
   document.addEventListener("click", (event) => {
     const letter = event.target.value
     if(letter) {
@@ -62,14 +71,14 @@ function App() {
     if (secretWord.length >= 1) {
       if(secretWord === letterallright.textContent) {
         setTimeout(() => {
-          alert("🏆 Parabéns! 🔥 Você conseguiu!")
+          alert("🏆 Parabéns! 🔥 Você ganhooooou!")
         }, 500)
       }
     }
   }
 
   function showLetterRepeat() {
-    console.log("Já usou a letra")
+    alert("Já usou a letra")
   }
   
 
